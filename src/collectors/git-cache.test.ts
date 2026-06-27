@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createCacheStore, cacheKey } from './git-cache'
+import { cacheKey, createCacheStore } from './git-cache'
 
 describe('createCacheStore', () => {
 	it('stores and retrieves values from session cache', () => {

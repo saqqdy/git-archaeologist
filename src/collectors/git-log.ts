@@ -2,9 +2,9 @@
  * Git log collector — parses `git log --format` output into structured commit data
  */
 
+import type { CommitInfo, LogQueryOptions, LogResult } from '../types'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
-import type { CommitInfo, LogQueryOptions, LogResult } from '../types'
 import { GitCommandError } from '../errors'
 import { cacheKey } from './git-cache'
 

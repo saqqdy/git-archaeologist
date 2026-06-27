@@ -2,9 +2,9 @@
  * Git follow collector — tracks file renames via `git log --follow --diff-filter=R`
  */
 
+import type { CommitInfo, FollowOptions, RenameEvent, RenameHistory } from '../types'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
-import type { CommitInfo, FollowOptions, RenameEvent, RenameHistory } from '../types'
 import { GitCommandError } from '../errors'
 import { cacheKey } from './git-cache'
 

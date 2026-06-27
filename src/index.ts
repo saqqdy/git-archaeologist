@@ -4,15 +4,15 @@
  * 入口模块，导出所有公开 API
  */
 
-// Errors
-export { GitCommandError, GitParseError } from './errors'
-
 // Collectors
 export { collectBlame, collectBlameSimple } from './collectors/git-blame'
-export { collectLog, getCommit } from './collectors/git-log'
-export { collectDiff, collectDiffBetween, collectCommitDetail } from './collectors/git-diff'
+
+export { cacheKey, createCacheStore, DEFAULT_CACHE_CONFIG } from './collectors/git-cache'
+export { collectCommitDetail, collectDiff, collectDiffBetween } from './collectors/git-diff'
 export { collectFollow } from './collectors/git-follow'
-export { createCacheStore, cacheKey, DEFAULT_CACHE_CONFIG } from './collectors/git-cache'
+export { collectLog, getCommit } from './collectors/git-log'
+// Errors
+export { GitCommandError, GitParseError } from './errors'
 
 // Types
 export type {
@@ -20,8 +20,8 @@ export type {
 	BlameOptions,
 	CacheConfig,
 	CacheStore,
-	CommitDiff,
 	CommitDetail,
+	CommitDiff,
 	CommitInfo,
 	DiffHunk,
 	DiffOptions,

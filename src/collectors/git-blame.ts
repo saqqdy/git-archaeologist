@@ -2,9 +2,9 @@
  * Git blame collector — parses `git blame --line-porcelain` output
  */
 
+import type { BlameOptions, CommitInfo, FileBlame, LineBlame } from '../types'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
-import type { BlameOptions, CommitInfo, FileBlame, LineBlame } from '../types'
 import { GitCommandError } from '../errors'
 import { cacheKey } from './git-cache'
 
@@ -64,8 +64,8 @@ function parsePorcelainOutput(stdout: string, file: string, startTime: number): 
 	const commitMap = new Map<string, CommitInfo>()
 	const lines: LineBlame[] = []
 
-	let currentHash = ''
-	let currentLineNum = 0
+	let currentHash = '',
+	 currentLineNum = 0
 
 	for (const rawLine of stdout.split('\n')) {
 		// Header line: <40-hex-hash> <origLine> <finalLine> [<numLines>]

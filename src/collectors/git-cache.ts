@@ -2,10 +2,10 @@
  * Git cache — three-tier caching: session (Map) → filesystem → none
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
-import { createHash } from 'node:crypto'
-import { join } from 'node:path'
 import type { CacheConfig, CacheStore } from '../types'
+import { createHash } from 'node:crypto'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { join } from 'node:path'
 
 /** Default cache configuration */
 export const DEFAULT_CACHE_CONFIG: CacheConfig = {

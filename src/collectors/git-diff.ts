@@ -2,19 +2,19 @@
  * Git diff collector — parses `git diff` / `git show` output into structured diff data
  */
 
-import { execFile } from 'node:child_process'
-import { promisify } from 'node:util'
 import type {
-	CommitDiff,
 	CommitDetail,
+	CommitDiff,
 	CommitInfo,
-	DiffOptions,
 	DiffHunk,
+	DiffOptions,
 	FileDiff,
 } from '../types'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
 import { GitCommandError } from '../errors'
-import { getCommit } from './git-log'
 import { cacheKey } from './git-cache'
+import { getCommit } from './git-log'
 
 const exec = promisify(execFile)
 
@@ -122,13 +122,14 @@ function parseOneFile(
 	lines: string[],
 	start: number
 ): { file: FileDiff; nextIndex: number } | null {
-	let i = start + 1
-	let file = '' as string
-	let from = '' as string
-	let status: FileDiff['status'] = 'modified'
+	let i = start + 1,
+		file = '' as string,
+		from = '' as string,
+		status: FileDiff['status'] = 'modified',
+		additions = 0,
+		deletions = 0,
+		renameTo = ''
 	const hunks: DiffHunk[] = []
-	let additions = 0
-	let deletions = 0
 
 	// Parse header lines
 	while (i < lines.length && !lines[i]!.startsWith('@@')) {
@@ -145,22 +146,13 @@ function parseOneFile(
 			from = line.slice(12)
 			status = 'renamed'
 		} else if (line.startsWith('rename to ')) {
-			file = line.slice(10)
+			renameTo = line.slice(10)
 			status = 'renamed'
 		}
 		i++
 	}
 
 	if (!file && from) file = from
-	if (status === 'renamed' && from) file = from // will be overwritten by rename to
-
-	// Re-read rename to get the correct current file path
-	let renameTo = ''
-	for (let j = start + 1; j < i; j++) {
-		if (lines[j]!.startsWith('rename to ')) {
-			renameTo = lines[j]!.slice(10)
-		}
-	}
 	if (renameTo) file = renameTo
 
 	// Parse hunks
@@ -245,9 +237,9 @@ function parseOneHunk(
 	const newCount = Number(hunkMatch[4] ?? '1')
 
 	const hunkLines: string[] = []
-	let additions = 0
-	let deletions = 0
-	let i = start + 1
+	let additions = 0,
+		deletions = 0,
+		i = start + 1
 
 	while (i < lines.length) {
 		const line = lines[i]!

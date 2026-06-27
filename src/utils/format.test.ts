@@ -1,6 +1,6 @@
+import type { CommitInfo, LineBlame } from '../types'
 import { describe, expect, it } from 'vitest'
 import { formatCommitShort, formatDuration, formatLineBlame, truncate } from './format'
-import type { CommitInfo, LineBlame } from '../types'
 
 const mockCommit: CommitInfo = {
 	hash: 'abcdef1234567890abcdef1234567890abcdef12',

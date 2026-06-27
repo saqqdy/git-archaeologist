@@ -41,5 +41,5 @@ export function formatDuration(ms: number): string {
 /** Truncate a string to maxLen, adding ellipsis if needed */
 export function truncate(str: string, maxLen: number): string {
 	if (str.length <= maxLen) return str
-	return str.slice(0, maxLen - 1) + '…'
+	return `${str.slice(0, maxLen - 1)  }…`
 }
