@@ -85,7 +85,10 @@ function parseLogOutput(output: string): CommitInfo[] {
 		const parts = entry.split(FIELD_DELIM)
 		if (parts.length < 8) continue
 
-		const rawParents = (parts[9] ?? '').trim()
+		// parts[8] contains "subject\x1Eparents" - split by COMMIT_DELIM
+		const subjectAndParents = (parts[8] ?? '').split(COMMIT_DELIM)
+		const message = subjectAndParents[0] ?? ''
+		const rawParents = (subjectAndParents[1] ?? '').trim()
 		const parents = rawParents ? rawParents.split(/\s+/) : []
 
 		commits.push({
@@ -95,7 +98,7 @@ function parseLogOutput(output: string): CommitInfo[] {
 			authorDate: parts[4]!,
 			committer: { name: parts[5]!, email: parts[6]! },
 			committerDate: parts[7]!,
-			message: (parts[8] ?? '').replace(COMMIT_DELIM, ''),
+			message,
 			parents,
 		})
 	}

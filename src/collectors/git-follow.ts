@@ -35,7 +35,7 @@ export async function collectFollow(options: FollowOptions): Promise<RenameHisto
 				'log',
 				'--follow',
 				'--diff-filter=R',
-				`--format=COMMIT:%H%x00%h%x00%an%x00%ae%x00%aI%x00%s%x00%P`,
+				`--format=COMMIT:%H%x00%h%x00%an%x00%ae%x00%aI%x00%cn%x00%ce%x00%cI%x00%s%x00%P`,
 				'--name-status',
 				'--',
 				file,
@@ -88,20 +88,20 @@ function parseCombinedOutput(
 		const trimmed = line.trim()
 		if (!trimmed) continue
 
-		// COMMIT line: COMMIT:<hash>\0<abbrev>\0<author>\0<email>\0<date>\0<msg>\0<parents>
+		// COMMIT line: COMMIT:<hash>\0<abbrev>\0<author>\0<email>\0<date>\0<committer>\0<email>\0<date>\0<msg>\0<parents>
 		if (trimmed.startsWith('COMMIT:')) {
 			const payload = trimmed.slice(7)
 			const parts = payload.split('\x00')
-			if (parts.length >= 6) {
+			if (parts.length >= 9) {
 				currentCommit = {
 					hash: parts[0]!,
 					abbrevHash: parts[1]!,
 					author: { name: parts[2]!, email: parts[3]! },
 					authorDate: parts[4]!,
-					committer: { name: '', email: '' },
-					committerDate: '',
-					message: parts[5]!,
-					parents: (parts[6] ?? '').split(' ').filter(Boolean),
+					committer: { name: parts[5]!, email: parts[6]! },
+					committerDate: parts[7]!,
+					message: parts[8]!,
+					parents: (parts[9] ?? '').split(' ').filter(Boolean),
 				}
 			}
 			continue
