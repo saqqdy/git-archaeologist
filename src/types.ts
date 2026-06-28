@@ -1,5 +1,5 @@
 /**
- * Git Archaeologist — Core type definitions
+ * Git Unearth — Core type definitions
  */
 
 // ─── Git Primitives ──────────────────────────────────────────────
@@ -169,8 +169,8 @@ export interface CacheConfig {
 
 // ─── Configuration ───────────────────────────────────────────────
 
-/** Archaeologist configuration */
-export interface ArchaeologistConfig {
+/** Unearth configuration */
+export interface UnearthConfig {
 	/** Maximum months of history to analyze (default: 12, 0 = unlimited) */
 	maxHistoryMonths: number
 	/** Cache configuration */
@@ -225,4 +225,4 @@ export interface FollowOptions {
 }
 
 /** Version constant */
-export const VERSION = '0.1.0' as const
+export const VERSION = '0.1.1' as const

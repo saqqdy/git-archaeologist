@@ -1,5 +1,5 @@
 /**
- * Git Archaeologist CLI — Quick experience without installation
+ * Git Unearth CLI — Quick experience without installation
  *
  * Usage: npx git-unearth <command> [options]
  *
@@ -25,14 +25,14 @@ import {
 	formatRename,
 } from './index.js'
 
-const VERSION = '0.1.0'
+const VERSION = '0.1.1'
 
 const COMMANDS = ['blame', 'log', 'diff', 'follow', 'detail', 'help', 'version'] as const
 type Command = (typeof COMMANDS)[number]
 
 function printHelp(): void {
 	console.log(`
-🔍 Git Archaeologist v${VERSION} — Semantic Code Archaeology
+🔍 Git Unearth v${VERSION} — Semantic Code Unearth
 
 Usage:
   npx git-unearth <command> [options]

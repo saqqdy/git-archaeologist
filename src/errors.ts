@@ -1,5 +1,5 @@
 /**
- * Structured error classes for Git Archaeologist
+ * Structured error classes for Git Unearth
  */
 
 /** Error thrown when a git command fails */

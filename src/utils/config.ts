@@ -1,12 +1,12 @@
 /**
- * Configuration management for Git Archaeologist
+ * Configuration management for Git Unearth
  */
 
-import type { ArchaeologistConfig } from '../types'
+import type { UnearthConfig } from '../types'
 import { DEFAULT_CACHE_CONFIG } from '../collectors/git-cache'
 
 /** Default configuration */
-const DEFAULT_CONFIG: ArchaeologistConfig = {
+const DEFAULT_CONFIG: UnearthConfig = {
 	maxHistoryMonths: 12,
 	cache: { ...DEFAULT_CACHE_CONFIG },
 	excludePaths: ['node_modules/', 'dist/', 'coverage/', 'vendor/', '.git/'],
@@ -15,7 +15,7 @@ const DEFAULT_CONFIG: ArchaeologistConfig = {
 }
 
 /** Deep merge user config with defaults */
-export function mergeConfig(user: Partial<ArchaeologistConfig>): ArchaeologistConfig {
+export function mergeConfig(user: Partial<UnearthConfig>): UnearthConfig {
 	return {
 		...DEFAULT_CONFIG,
 		...user,
@@ -28,6 +28,6 @@ export function mergeConfig(user: Partial<ArchaeologistConfig>): ArchaeologistCo
 }
 
 /** Get default configuration (fresh copy) */
-export function getDefaultConfig(): ArchaeologistConfig {
+export function getDefaultConfig(): UnearthConfig {
 	return structuredClone(DEFAULT_CONFIG)
 }

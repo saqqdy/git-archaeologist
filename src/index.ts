@@ -1,5 +1,5 @@
 /**
- * Git Archaeologist — git blame 增强版
+ * Git Unearth — git blame 增强版
  *
  * 入口模块，导出所有公开 API
  */
@@ -16,7 +16,6 @@ export { GitCommandError, GitParseError } from './errors'
 
 // Types
 export type {
-	ArchaeologistConfig,
 	BlameOptions,
 	CacheConfig,
 	CacheStore,
@@ -35,6 +34,7 @@ export type {
 	LogResult,
 	RenameEvent,
 	RenameHistory,
+	UnearthConfig,
 } from './types'
 export { VERSION } from './types'
 
