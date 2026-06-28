@@ -1,6 +1,6 @@
 # 介绍
 
-Git Archaeologist 是一个 AI 驱动的 git blame 增强版，帮助你理解**代码为什么写成这样**，而不只是"谁写的"。
+Git Unearth 是一个 AI 驱动的 git blame 增强版，帮助你理解**代码为什么写成这样**，而不只是"谁写的"。
 
 ## 问题
 
@@ -17,7 +17,7 @@ Git Archaeologist 是一个 AI 驱动的 git blame 增强版，帮助你理解**
 
 ## 解决方案
 
-Git Archaeologist 追溯代码的**决策历史**：
+Git Unearth 追溯代码的**决策历史**：
 
 1. **数据采集** — 将 git 命令输出解析为结构化数据
 2. **语义分析** — 分组 commits，分类意图

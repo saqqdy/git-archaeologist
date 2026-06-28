@@ -11,7 +11,7 @@ import { join } from 'node:path'
 export const DEFAULT_CACHE_CONFIG: CacheConfig = {
 	sessionCache: true,
 	fsCache: true,
-	cacheDir: '.git-archaeologist',
+	cacheDir: '.git-unearth',
 	defaultTTL: 86400, // 24h
 }
 

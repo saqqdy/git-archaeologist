@@ -1,7 +1,7 @@
 /**
  * Git Archaeologist CLI — Quick experience without installation
  *
- * Usage: npx git-archaeologist <command> [options]
+ * Usage: npx git-unearth <command> [options]
  *
  * Commands:
  *   blame <file> [--start N] [--end N]  Line-level blame
@@ -35,7 +35,7 @@ function printHelp(): void {
 🔍 Git Archaeologist v${VERSION} — Semantic Code Archaeology
 
 Usage:
-  npx git-archaeologist <command> [options]
+  npx git-unearth <command> [options]
 
 Commands:
   blame <file>           Line-level blame for a file
@@ -56,18 +56,18 @@ Commands:
   version                Show version
 
 Examples:
-  npx git-archaeologist blame src/index.ts
-  npx git-archaeologist blame src/index.ts --start 1 --end 10
-  npx git-archaeologist log --max-count 5
-  npx git-archaeologist log --path src/
-  npx git-archaeologist diff abc1234
-  npx git-archaeologist follow src/index.ts
-  npx git-archaeologist detail abc1234
+  npx git-unearth blame src/index.ts
+  npx git-unearth blame src/index.ts --start 1 --end 10
+  npx git-unearth log --max-count 5
+  npx git-unearth log --path src/
+  npx git-unearth diff abc1234
+  npx git-unearth follow src/index.ts
+  npx git-unearth detail abc1234
 `)
 }
 
 function printVersion(): void {
-	console.log(`git-archaeologist v${VERSION}`)
+	console.log(`git-unearth v${VERSION}`)
 }
 
 async function runBlame(args: string[]): Promise<void> {
@@ -83,7 +83,7 @@ async function runBlame(args: string[]): Promise<void> {
 	const file = args[0]
 	if (!file) {
 		console.error('Error: missing file argument')
-		console.log('Usage: npx git-archaeologist blame <file> [--start N] [--end N]')
+		console.log('Usage: npx git-unearth blame <file> [--start N] [--end N]')
 		process.exit(1)
 	}
 
@@ -139,7 +139,7 @@ async function runDiff(args: string[]): Promise<void> {
 	const hash = args[0]
 	if (!hash) {
 		console.error('Error: missing hash argument')
-		console.log('Usage: npx git-archaeologist diff <hash>')
+		console.log('Usage: npx git-unearth diff <hash>')
 		process.exit(1)
 	}
 
@@ -162,7 +162,7 @@ async function runFollow(args: string[]): Promise<void> {
 	const file = args[0]
 	if (!file) {
 		console.error('Error: missing file argument')
-		console.log('Usage: npx git-archaeologist follow <file>')
+		console.log('Usage: npx git-unearth follow <file>')
 		process.exit(1)
 	}
 
@@ -190,7 +190,7 @@ async function runDetail(args: string[]): Promise<void> {
 	const hash = args[0]
 	if (!hash) {
 		console.error('Error: missing hash argument')
-		console.log('Usage: npx git-archaeologist detail <hash>')
+		console.log('Usage: npx git-unearth detail <hash>')
 		process.exit(1)
 	}
 

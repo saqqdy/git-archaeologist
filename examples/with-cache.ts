@@ -23,7 +23,7 @@ async function main() {
 	const cache = createCacheStore({
 		sessionCache: true,
 		fsCache: true,
-		cacheDir: '.git-archaeologist',
+		cacheDir: '.git-unearth',
 		defaultTTL: 3600, // 1 hour
 	})
 

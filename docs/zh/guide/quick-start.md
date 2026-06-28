@@ -24,17 +24,17 @@
 ## 使用 CLI
 
 ```bash
-npx git-archaeologist blame src/index.ts
-npx git-archaeologist log --max-count 5
-npx git-archaeologist diff abc1234
-npx git-archaeologist follow src/index.ts
-npx git-archaeologist detail abc1234
+npx git-unearth blame src/index.ts
+npx git-unearth log --max-count 5
+npx git-unearth diff abc1234
+npx git-unearth follow src/index.ts
+npx git-unearth detail abc1234
 ```
 
 ## 使用 API
 
 ```typescript
-import { collectBlame, createCacheStore } from 'git-archaeologist'
+import { collectBlame, createCacheStore } from 'git-unearth'
 
 const cache = createCacheStore({ sessionCache: true })
 

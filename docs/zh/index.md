@@ -1,4 +1,4 @@
-# 🔍 Git Archaeologist
+# 🔍 Git Unearth
 
 > AI 驱动的 git blame 增强版 — 理解**代码为什么写成这样**，而不只是"谁写的"。
 
@@ -10,7 +10,7 @@
 
 ## 它解决了什么
 
-| 传统 git blame | Git Archaeologist |
+| 传统 git blame | Git Unearth |
 |---------------|-------------------|
 | `alice 2024-06-15` | 追溯 commit → PR → Issue → 业务上下文 |
 | 无分组 | 分组 commits，识别决策点 |

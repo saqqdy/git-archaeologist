@@ -161,7 +161,7 @@ export interface CacheConfig {
 	sessionCache: boolean
 	/** Enable filesystem cache (default: true) */
 	fsCache: boolean
-	/** Filesystem cache directory (default: '.git-archaeologist') */
+	/** Filesystem cache directory (default: '.git-unearth') */
 	cacheDir: string
 	/** Default TTL in seconds (default: 86400 = 24h) */
 	defaultTTL: number

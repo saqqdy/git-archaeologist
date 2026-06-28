@@ -65,7 +65,7 @@
 | **DB Migration Safety** | 分析 migration 是否会导致锁表、数据丢失，生成回滚方案 | 后端团队 |
 | **Accessibility (a11y) Auditor** | 不只跑 axe，而是理解设计意图，给出修复建议而非只报规则 | 前端团队 |
 | **Feature Flag Analyzer** | 分析功能开关覆盖率、清理废弃 flag、评估 flag 间交互影响 | DevOps |
-| **Git Archaeologist** | `git blame` 增强版，理解"这段代码为什么写成这样"而非只是"谁写的" | 全栈 |
+| **Git Unearth** | `git blame` 增强版，理解"这段代码为什么写成这样"而非只是"谁写的" | 全栈 |
 
 ---
 

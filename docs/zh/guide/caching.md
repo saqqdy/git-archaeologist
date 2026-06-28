@@ -1,20 +1,20 @@
 # 缓存
 
-Git Archaeologist 支持三层缓存：
+Git Unearth 支持三层缓存：
 
 1. **Session 缓存** — 内存 Map，快速但短暂
-2. **文件系统缓存** — 持久化到 `.git-archaeologist/` 目录
+2. **文件系统缓存** — 持久化到 `.git-unearth/` 目录
 3. **无缓存** — 每次都重新执行 git 命令
 
 ## 使用
 
 ```typescript
-import { createCacheStore, collectBlame } from 'git-archaeologist'
+import { createCacheStore, collectBlame } from 'git-unearth'
 
 const cache = createCacheStore({
   sessionCache: true,
   fsCache: true,
-  cacheDir: '.git-archaeologist',
+  cacheDir: '.git-unearth',
   defaultTTL: 3600, // 1 小时
 })
 

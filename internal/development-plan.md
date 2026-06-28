@@ -1,4 +1,4 @@
-# Git Archaeologist — 详细开发计划
+# Git Unearth — 详细开发计划
 
 > `git blame` 增强版：理解"这段代码为什么写成这样"而非只是"谁写的"
 
@@ -15,11 +15,11 @@
 - **"这个函数经历了怎样的演变才变成现在这样？"**
 - **"当初为什么不选更直观的方案？"**
 
-`git blame` 只回答了 **who + when**，Git Archaeologist 回答 **why**。
+`git blame` 只回答了 **who + when**，Git Unearth 回答 **why**。
 
 ### AI 不可替代性
 
-| 能力 | git blame / log | 规则脚本 | Git Archaeologist (AI) |
+| 能力 | git blame / log | 规则脚本 | Git Unearth (AI) |
 |------|:---:|:---:|:---:|
 | 定位谁写的 | ✅ | ✅ | ✅ |
 | 关联 PR/Issue | ❌ | 部分可做 | ✅ |
@@ -274,7 +274,7 @@ interface DiffHunk {
 
 - 短期缓存：当前 session 内重复查询 (Map)
 - 中期缓存：按 commit hash 缓存解析结果 (文件系统, TTL 24h)
-- 长期缓存：项目级分析结果 (`.git-archaeologist/` 目录)
+- 长期缓存：项目级分析结果 (`.git-unearth/` 目录)
 
 **验证标准**：
 - ✅ 正确解析含中文/特殊字符的 commit message
@@ -491,7 +491,7 @@ Archaeologist: [搜索相关 TODO/Issue...]
 {
   "gitArchaeologist": {
     "maxHistoryMonths": 12,
-    "cacheDir": ".git-archaeologist",
+    "cacheDir": ".git-unearth",
     "cacheTTL": 86400,
     "githubToken": "env:GITHUB_TOKEN",
     "gitlabToken": "env:GITLAB_TOKEN",
@@ -517,7 +517,7 @@ Archaeologist: [搜索相关 TODO/Issue...]
 ## 五、文件结构规划
 
 ```
-git-archaeologist/
+git-unearth/
 ├── CLAUDE.md                    # 项目指引
 ├── package.json
 ├── tsconfig.json

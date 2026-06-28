@@ -24,7 +24,7 @@ Output:
 ## Using the API
 
 ```typescript
-import { collectBlame, createCacheStore } from 'git-archaeologist'
+import { collectBlame, createCacheStore } from 'git-unearth'
 
 const cache = createCacheStore({ sessionCache: true })
 

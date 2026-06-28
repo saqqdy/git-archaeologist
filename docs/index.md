@@ -1,4 +1,4 @@
-# 🔍 Git Archaeologist
+# 🔍 Git Unearth
 
 > AI-powered git blame enhancer — understand **WHY** code was written, not just **WHO** wrote it.
 
@@ -10,7 +10,7 @@
 
 ## What It Does
 
-| Traditional git blame | Git Archaeologist |
+| Traditional git blame | Git Unearth |
 |----------------------|-------------------|
 | `alice 2024-06-15` | Traces commit → PR → Issue → business context |
 | No grouping | Groups commits, identifies decision points |

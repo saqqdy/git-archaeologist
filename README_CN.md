@@ -1,9 +1,9 @@
-# 🔍 Git Archaeologist
+# 🔍 Git Unearth
 
 > AI 驱动的 git blame 增强版 — 理解"**代码为什么写成这样**"，而不只是"谁写的"。语义级代码考古，通过 Claude Code Skill 实现。
 
-[![npm version](https://img.shields.io/npm/v/git-archaeologist.svg)](https://www.npmjs.com/package/git-archaeologist)
-[![license](https://img.shields.io/npm/l/git-archaeologist.svg)](https://github.com/saqqdy/git-archaeologist/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/git-unearth.svg)](https://www.npmjs.com/package/git-unearth)
+[![license](https://img.shields.io/npm/l/git-unearth.svg)](https://github.com/saqqdy/git-unearth/blob/master/LICENSE)
 
 [English Docs](README.md)
 
@@ -11,7 +11,7 @@
 
 ## 🎯 解决的问题
 
-| 场景 | 传统 git blame | Git Archaeologist |
+| 场景 | 传统 git blame | Git Unearth |
 |------|---------------|-------------------|
 | "这行为什么这样写？" | `alice 2024-06-15` — 只告诉你谁写的 | 追溯 commit → PR → Issue → 业务上下文 |
 | "为什么用这个模式？" | 无洞察 | 分组相关 commits，识别决策点 |
@@ -65,8 +65,8 @@ Session (Map) → Filesystem → None。避免重复 git 操作。
 
 ```bash
 # 在 Claude Code 中运行：
-/plugin marketplace add saqqdy/git-archaeologist
-/plugin install git-archaeologist
+/plugin marketplace add saqqdy/git-unearth
+/plugin install git-unearth
 ```
 
 #### 安装方式 B：本地安装
@@ -76,11 +76,11 @@ Session (Map) → Filesystem → None。避免重复 git 操作。
 cd your-project
 
 # 2. 安装 npm 包
-pnpm add -D git-archaeologist
+pnpm add -D git-unearth
 
 # 3. 复制插件文件
 mkdir -p .claude/skills
-cp -r node_modules/git-archaeologist/.claude/skills/git-archaeologist .claude/skills/
+cp -r node_modules/git-unearth/.claude/skills/git-unearth .claude/skills/
 ```
 
 #### 可用命令
@@ -118,14 +118,14 @@ cp -r node_modules/git-archaeologist/.claude/skills/git-archaeologist .claude/sk
 ### 方式 2：程序化调用
 
 ```bash
-pnpm add git-archaeologist
+pnpm add git-unearth
 ```
 
 ```typescript
 import {
   collectBlame, collectLog, collectCommitDetail, collectFollow,
   createCacheStore,
-} from 'git-archaeologist'
+} from 'git-unearth'
 
 const cache = createCacheStore({ sessionCache: true, fsCache: true })
 
@@ -156,19 +156,19 @@ console.log(`+${detail.diff.totalAdditions}/-${detail.diff.totalDeletions}`)
 
 ```bash
 # 在任何 git 仓库中，一条命令即可体验：
-npx git-archaeologist blame src/index.ts
-npx git-archaeologist log --max-count 5
-npx git-archaeologist diff abc1234
-npx git-archaeologist follow src/index.ts
-npx git-archaeologist detail abc1234
-npx git-archaeologist help
+npx git-unearth blame src/index.ts
+npx git-unearth log --max-count 5
+npx git-unearth diff abc1234
+npx git-unearth follow src/index.ts
+npx git-unearth detail abc1234
+npx git-unearth help
 ```
 
 ### 方式 4：Clone 并运行示例
 
 ```bash
-git clone https://github.com/saqqdy/git-archaeologist.git
-cd git-archaeologist
+git clone https://github.com/saqqdy/git-unearth.git
+cd git-unearth
 pnpm install
 
 # 运行示例
@@ -194,8 +194,8 @@ npx tsx examples/skill-commands.ts
 ## 🗂️ 项目结构
 
 ```
-git-archaeologist/
-├── .claude/skills/git-archaeologist/   # Skill 提示词（核心产品）
+git-unearth/
+├── .claude/skills/git-unearth/   # Skill 提示词（核心产品）
 │   └── skill.md                        # 命令 + 执行流程
 ├── src/                                # TypeScript 源码
 │   ├── index.ts                        # 公开 API 导出
@@ -234,7 +234,7 @@ pnpm run docs:dev     # 启动文档服务器
 
 ### vs git blame
 
-| 维度 | git blame | Git Archaeologist |
+| 维度 | git blame | Git Unearth |
 |------|-----------|-------------------|
 | 输出 | `author date code` | 结构化 `CommitInfo` + 证据链 |
 | 为什么？ | ❌ 无 | ✅ 追溯 PR/Issue/业务上下文 |

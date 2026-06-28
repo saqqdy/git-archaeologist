@@ -5,11 +5,11 @@
 ### 🚀 Features
 
 - **cli**: add zero-install CLI for quick experience
-  - `npx git-archaeologist blame <file>` — line-level blame
-  - `npx git-archaeologist log --max-count N` — commit history
-  - `npx git-archaeologist diff <hash>` — diff for a commit
-  - `npx git-archaeologist follow <file>` — rename tracking
-  - `npx git-archaeologist detail <hash>` — full commit detail
+  - `npx git-unearth blame <file>` — line-level blame
+  - `npx git-unearth log --max-count N` — commit history
+  - `npx git-unearth diff <hash>` — diff for a commit
+  - `npx git-unearth follow <file>` — rename tracking
+  - `npx git-unearth detail <hash>` — full commit detail
 - **collectors**: add git data collection layer with blame, log, diff, follow support
   - `collectBlame()` — parse `git blame --line-porcelain` into structured line-level data
   - `collectLog()` — parse `git log` with RS/US delimiters into `CommitInfo[]`
@@ -26,7 +26,7 @@
 
 ### 📝 Documentation
 
-- add Claude Code Skill definition (`.claude/skills/git-archaeologist/skill.md`)
+- add Claude Code Skill definition (`.claude/skills/git-unearth/skill.md`)
   - Commands: `/why`, `/history`, `/context`, `/decisions`, `/archaeology`
   - Confidence levels: 🟢 High (PR/Issue) 🟡 Medium (clear commit) 🔴 Low (AI inference)
 - add examples directory with 3 demo scripts

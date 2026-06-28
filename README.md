@@ -1,9 +1,9 @@
-# 🔍 Git Archaeologist
+# 🔍 Git Unearth
 
 > AI-powered git blame enhancer — understand **WHY** code was written, not just **WHO** wrote it. Semantic code archaeology via Claude Code Skill.
 
-[![npm version](https://img.shields.io/npm/v/git-archaeologist.svg)](https://www.npmjs.com/package/git-archaeologist)
-[![license](https://img.shields.io/npm/l/git-archaeologist.svg)](https://github.com/saqqdy/git-archaeologist/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/git-unearth.svg)](https://www.npmjs.com/package/git-unearth)
+[![license](https://img.shields.io/npm/l/git-unearth.svg)](https://github.com/saqqdy/git-unearth/blob/master/LICENSE)
 
 [中文文档](README_CN.md)
 
@@ -11,7 +11,7 @@
 
 ## 🎯 The Problem It Solves
 
-| Scenario | Traditional git blame | Git Archaeologist |
+| Scenario | Traditional git blame | Git Unearth |
 |----------|----------------------|-------------------|
 | "Why this line?" | `alice 2024-06-15` — tells you who, but not why | Traces commit → PR → Issue → business context |
 | "Why this pattern?" | No insight | Groups related commits, identifies decision points |
@@ -65,8 +65,8 @@ This project is a **Claude Code Plugin**. Install via marketplace for one-click 
 
 ```bash
 # In Claude Code, run:
-/plugin marketplace add saqqdy/git-archaeologist
-/plugin install git-archaeologist
+/plugin marketplace add saqqdy/git-unearth
+/plugin install git-unearth
 ```
 
 #### Method B: Local Install
@@ -76,11 +76,11 @@ This project is a **Claude Code Plugin**. Install via marketplace for one-click 
 cd your-project
 
 # 2. Install npm package
-pnpm add -D git-archaeologist
+pnpm add -D git-unearth
 
 # 3. Copy plugin files
 mkdir -p .claude/skills
-cp -r node_modules/git-archaeologist/.claude/skills/git-archaeologist .claude/skills/
+cp -r node_modules/git-unearth/.claude/skills/git-unearth .claude/skills/
 ```
 
 #### Available Commands
@@ -118,14 +118,14 @@ Type these commands in Claude Code:
 ### Option 2: Programmatic Usage
 
 ```bash
-pnpm add git-archaeologist
+pnpm add git-unearth
 ```
 
 ```typescript
 import {
   collectBlame, collectLog, collectCommitDetail, collectFollow,
   createCacheStore,
-} from 'git-archaeologist'
+} from 'git-unearth'
 
 const cache = createCacheStore({ sessionCache: true, fsCache: true })
 
@@ -156,19 +156,19 @@ console.log(`+${detail.diff.totalAdditions}/-${detail.diff.totalDeletions}`)
 
 ```bash
 # In any git repo, run directly:
-npx git-archaeologist blame src/index.ts
-npx git-archaeologist log --max-count 5
-npx git-archaeologist diff abc1234
-npx git-archaeologist follow src/index.ts
-npx git-archaeologist detail abc1234
-npx git-archaeologist help
+npx git-unearth blame src/index.ts
+npx git-unearth log --max-count 5
+npx git-unearth diff abc1234
+npx git-unearth follow src/index.ts
+npx git-unearth detail abc1234
+npx git-unearth help
 ```
 
 ### Option 4: Clone and Run Examples
 
 ```bash
-git clone https://github.com/saqqdy/git-archaeologist.git
-cd git-archaeologist
+git clone https://github.com/saqqdy/git-unearth.git
+cd git-unearth
 pnpm install
 
 # Run examples
@@ -194,8 +194,8 @@ npx tsx examples/skill-commands.ts
 ## 🗂️ Project Structure
 
 ```
-git-archaeologist/
-├── .claude/skills/git-archaeologist/   # Skill prompts (core product)
+git-unearth/
+├── .claude/skills/git-unearth/   # Skill prompts (core product)
 │   └── skill.md                        # Commands + execution flow
 ├── src/                                # TypeScript source
 │   ├── index.ts                        # Public API exports
@@ -234,7 +234,7 @@ pnpm run docs:dev     # Start docs server
 
 ### vs git blame
 
-| Dimension | git blame | Git Archaeologist |
+| Dimension | git blame | Git Unearth |
 |-----------|-----------|-------------------|
 | Output | `author date code` | Structured `CommitInfo` + evidence chain |
 | Why? | ❌ No | ✅ Trace PR/Issue/business context |

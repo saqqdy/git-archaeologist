@@ -1,20 +1,20 @@
 # Caching
 
-Git Archaeologist supports three-tier caching:
+Git Unearth supports three-tier caching:
 
 1. **Session Cache** — In-memory Map, fast but ephemeral
-2. **Filesystem Cache** — Persisted to `.git-archaeologist/` directory
+2. **Filesystem Cache** — Persisted to `.git-unearth/` directory
 3. **None** — Fresh git calls every time
 
 ## Usage
 
 ```typescript
-import { createCacheStore, collectBlame } from 'git-archaeologist'
+import { createCacheStore, collectBlame } from 'git-unearth'
 
 const cache = createCacheStore({
   sessionCache: true,
   fsCache: true,
-  cacheDir: '.git-archaeologist',
+  cacheDir: '.git-unearth',
   defaultTTL: 3600, // 1 hour
 })
 

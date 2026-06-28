@@ -1,6 +1,6 @@
 # Introduction
 
-Git Archaeologist is an AI-powered git blame enhancer that helps you understand **WHY** code was written, not just **WHO** wrote it.
+Git Unearth is an AI-powered git blame enhancer that helps you understand **WHY** code was written, not just **WHO** wrote it.
 
 ## The Problem
 
@@ -17,7 +17,7 @@ But it doesn't tell you:
 
 ## The Solution
 
-Git Archaeologist traces the **decision history** of code:
+Git Unearth traces the **decision history** of code:
 
 1. **Data Collection** — Parse git commands into structured data
 2. **Semantic Analysis** — Group commits, classify intent
