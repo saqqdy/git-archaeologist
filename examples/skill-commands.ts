@@ -1,5 +1,5 @@
 /**
- * Skill commands demo for Git Archaeologist
+ * Skill commands demo for Git Unearth
  *
  * Demonstrates the commands available in the Claude Code Skill.
  * Run with: npx tsx examples/skill-commands.ts
@@ -111,7 +111,7 @@ async function contextCommand(hash: string) {
 // ─── Run demos ────────────────────────────────────────────────────────
 
 async function main() {
-	console.log('🎯 Git Archaeologist — Skill Commands Demo\n')
+	console.log('🎯 Git Unearth — Skill Commands Demo\n')
 
 	const log = await collectLog({ root: ROOT, log: { maxCount: 1 } })
 	const recentHash = log.commits[0]?.hash ?? 'HEAD'

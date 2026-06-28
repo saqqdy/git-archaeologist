@@ -1,5 +1,5 @@
 /**
- * Cache usage example for Git Archaeologist
+ * Cache usage example for Git Unearth
  *
  * Demonstrates how to use caching to avoid redundant git operations.
  * Run with: npx tsx examples/with-cache.ts
@@ -17,7 +17,7 @@ import {
 const ROOT = process.cwd()
 
 async function main() {
-	console.log('💾 Git Archaeologist — Cache Usage Example\n')
+	console.log('💾 Git Unearth — Cache Usage Example\n')
 
 	// Create a cache store with default config
 	const cache = createCacheStore({

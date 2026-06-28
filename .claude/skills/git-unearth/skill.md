@@ -1,13 +1,13 @@
 ---
 name: git-unearth
 description: Git Unearth — git blame 增强版，理解"代码为什么写成这样"而非只是"谁写的"，语义级代码考古
-version: 0.1.0
+version: 0.1.1
 triggers:
   - /why
   - /history
   - /context
   - /decisions
-  - /archaeology
+  - /unearth
 ---
 
 # Git Unearth — 语义代码考古
@@ -38,7 +38,7 @@ internal/                          ← 内部规划文档
 ### `/decisions [area]` — 架构决策考古
 从 git 历史中提取关键架构决策，输出类 ADR 格式记录
 
-### `/archaeology <area>` — 深度考古模式
+### `/archaeology <area>` — 深度挖掘模式
 交互式深度调查特定代码区域，支持多轮追问
 
 ## 核心原则

@@ -1,5 +1,5 @@
 /**
- * Basic usage examples for Git Archaeologist
+ * Basic usage examples for Git Unearth
  *
  * Run with: npx tsx examples/basic-usage.ts
  */
@@ -18,7 +18,7 @@ import {
 const ROOT = process.cwd()
 
 async function main() {
-	console.log('🔍 Git Archaeologist — Basic Usage Examples\n')
+	console.log('🔍 Git Unearth — Basic Usage Examples\n')
 
 	// ─── Example 1: Git Blame ────────────────────────────────────────
 	console.log('📝 Example 1: Git Blame')
