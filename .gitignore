@@ -34,11 +34,11 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Claude Code session
-.claude/
+# Claude Code session (keep .claude for skill distribution)
+# .claude/
 
-# Claude plugin development
-.claude-plugin/
+# Claude plugin marketplace files (needed for distribution)
+# .claude-plugin/
 
 # VitePress cache
 docs/.vitepress/cache/

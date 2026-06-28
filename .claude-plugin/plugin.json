@@ -1,18 +1,21 @@
 {
-  "name": "git-archaeologist",
+  "name": "git-unearth",
   "version": "0.1.0",
-  "description": "AI-powered git blame enhancer — understand WHY code was written, not just WHO wrote it. Semantic code archaeology with /why, /history, /context, /decisions commands.",
+  "description": "Git Archaeologist — AI-powered git blame enhancer, understand WHY code was written, not just WHO wrote it. Semantic code archaeology via Claude Code Skill",
   "author": {
     "name": "saqqdy",
     "url": "https://github.com/saqqdy"
   },
-  "repository": "https://github.com/saqqdy/git-archaeologist",
+  "repository": "https://github.com/saqqdy/git-unearth",
   "license": "MIT",
   "keywords": [
+    "git",
     "git-blame",
-    "code-archaeology",
-    "decision-history",
     "code-history",
+    "code-archaeology",
+    "decision-archaeology",
+    "semantic-analysis",
+    "claude-code",
     "claude-code-skill"
   ]
 }

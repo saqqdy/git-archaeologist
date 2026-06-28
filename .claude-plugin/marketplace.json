@@ -1,0 +1,31 @@
+{
+  "name": "git-unearth",
+  "description": "AI-powered git blame enhancer — understand WHY code was written, not just WHO wrote it. Semantic code archaeology via Claude Code Skill",
+  "owner": {
+    "name": "saqqdy",
+    "url": "https://github.com/saqqdy"
+  },
+  "plugins": [
+    {
+      "name": "git-unearth",
+      "description": "AI-powered git blame enhancer — understand WHY code was written, not just WHO wrote it. Semantic code archaeology via Claude Code Skill",
+      "version": "0.1.0",
+      "author": {
+        "name": "saqqdy",
+        "url": "https://github.com/saqqdy"
+      },
+      "source": "./",
+      "category": "development",
+      "tags": [
+        "git",
+        "git-blame",
+        "code-history",
+        "code-archaeology",
+        "decision-archaeology",
+        "semantic-analysis",
+        "claude-code",
+        "claude-code-skill"
+      ]
+    }
+  ]
+}
