@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.1.1 (2026-06-28)
+
+### 🔄 Project Rename
+
+- **branding**: rename project from "Git Archaeologist" to "Git Unearth"
+  - Update all source code references: `ArchaeologistConfig` → `UnearthConfig`
+  - Update CLI branding: `Git Archaeologist` → `Git Unearth`
+  - Update config file name: `.gitarchaeologistrc` → `.git-unearthrc`
+  - Update all documentation and examples
+
+### 📝 Documentation Enhancement
+
+- **docs**: comprehensive documentation optimization
+  - Enhanced landing page with feature comparison and confidence levels
+  - Improved installation guide with marketplace instructions
+  - Fixed quick-start guide (removed Chinese output from English docs)
+  - Expanded roadmap with detailed version plans
+  - Enhanced skill-commands with English examples
+  - Comprehensive API reference with usage patterns
+  - Updated VitePress config with correct project branding
+
+- **examples**: update example files
+  - `examples/basic-usage.ts` — updated project name
+  - `examples/skill-commands.ts` — updated project name
+  - `examples/with-cache.ts` — updated project name
+
+
 ## 0.1.0 (2026-06-27)
 
 ### 🚀 Features
@@ -22,12 +49,12 @@
   - All collectors accept optional `cache` parameter for automatic caching
 - **errors**: add structured error classes `GitCommandError` and `GitParseError`
 - **format**: add formatting utilities — `formatCommitShort`, `formatLineBlame`, `formatFileDiff`, `formatRename`, `formatDuration`, `truncate`
-- **config**: add `getDefaultConfig()` / `mergeConfig()` for `ArchaeologistConfig`
+- **config**: add `getDefaultConfig()` / `mergeConfig()` for `UnearthConfig`
 
 ### 📝 Documentation
 
 - add Claude Code Skill definition (`.claude/skills/git-unearth/skill.md`)
-  - Commands: `/why`, `/history`, `/context`, `/decisions`, `/archaeology`
+  - Commands: `/why`, `/history`, `/context`, `/decisions`, `/unearth`
   - Confidence levels: 🟢 High (PR/Issue) 🟡 Medium (clear commit) 🔴 Low (AI inference)
 - add examples directory with 3 demo scripts
   - `examples/basic-usage.ts` — programmatic API walkthrough

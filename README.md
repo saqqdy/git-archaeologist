@@ -1,6 +1,6 @@
 # 🔍 Git Unearth
 
-> AI-powered git blame enhancer — understand **WHY** code was written, not just **WHO** wrote it. Semantic code archaeology via Claude Code Skill.
+> AI-powered git blame enhancer — understand **WHY** code was written, not just **WHO** wrote it. Semantic code unearth via Claude Code Skill.
 
 [![npm version](https://img.shields.io/npm/v/git-unearth.svg)](https://www.npmjs.com/package/git-unearth)
 [![license](https://img.shields.io/npm/l/git-unearth.svg)](https://github.com/saqqdy/git-unearth/blob/master/LICENSE)
@@ -17,13 +17,13 @@
 | "Why this pattern?" | No insight | Groups related commits, identifies decision points |
 | "Was this intentional?" | Unknown | Confidence levels: 🟢 High (documented) 🟡 Medium (clear commit) 🔴 Low (AI inference) |
 
-**Core insight**: Code archaeology requires understanding **decision history**, not just author history.
+**Core insight**: Code unearth requires understanding **decision history**, not just author history.
 
 ---
 
 ## ✨ Core Features
 
-### 🔍 Git Data Collection Layer (v0.1.0)
+### 🔍 Git Data Collection Layer (v0.1.1)
 
 Structured parsing of git command output:
 
@@ -43,7 +43,7 @@ Session (Map) → Filesystem → None. Avoid redundant git operations.
 - Intent classification (feat/fix/refactor/perf/workaround)
 - Decision timeline construction
 
-### 🔄 Interactive Archaeology Commands
+### 🔄 Interactive Unearth Commands
 
 | Command | Description |
 |---------|-------------|
@@ -51,7 +51,7 @@ Session (Map) → Filesystem → None. Avoid redundant git operations.
 | `/history <path>` | Evolution timeline with key decision points |
 | `/context <hash>` | Related changes network |
 | `/decisions [area]` | Architecture Decision Records from git history |
-| `/archaeology <area>` | Deep interactive investigation |
+| `/unearth <area>` | Deep interactive investigation |
 
 ---
 
@@ -93,7 +93,7 @@ Type these commands in Claude Code:
 | `/history` | Evolution timeline | `/history src/components/` |
 | `/context` | Related changes network | `/context HEAD` |
 | `/decisions` | Architecture Decision Records | `/decisions` |
-| `/archaeology` | Deep interactive investigation | `/archaeology src/` |
+| `/unearth` | Deep interactive investigation | `/unearth src/` |
 
 #### Output Example
 
@@ -183,10 +183,10 @@ npx tsx examples/skill-commands.ts
 
 | Version | Codename | Theme | Status |
 |---------|----------|-------|--------|
-| v0.1.0 | Daybreak | Data collection layer (blame/log/diff/follow + cache) | ✅ Current |
+| v0.1.0 | Daybreak | Data collection layer (released) (blame/log/diff/follow + cache) | ✅ Current |
 | v0.2.0 | Sunrise | Analysis engine (commit grouping + intent classification) | 📋 Planned |
 | v0.3.0 | Dawn | Decision timeline + ADR generation | 📋 Planned |
-| v0.4.0 | Ember | Interactive archaeology wizard | 📋 Planned |
+| v0.4.0 | Ember | Interactive unearth wizard | 📋 Planned |
 | v1.0.0 | Lighthouse | Production-ready + marketplace | 📋 Planned |
 
 ---

@@ -23,7 +23,7 @@
 
 ## ✨ 核心功能
 
-### 🔍 Git 数据采集层 (v0.1.0)
+### 🔍 Git 数据采集层 (v0.1.1)
 
 结构化解析 git 命令输出：
 
@@ -51,7 +51,7 @@ Session (Map) → Filesystem → None。避免重复 git 操作。
 | `/history <path>` | 演变时间线，标注关键决策点 |
 | `/context <hash>` | 相关变更网络 |
 | `/decisions [area]` | 从 git 历史提取架构决策记录 |
-| `/archaeology <area>` | 深度交互式调查 |
+| `/unearth <area>` | 深度交互式调查 |
 
 ---
 
@@ -93,7 +93,7 @@ cp -r node_modules/git-unearth/.claude/skills/git-unearth .claude/skills/
 | `/history` | 演变时间线，标注关键决策点 | `/history src/components/` |
 | `/context` | 相关变更网络 | `/context HEAD` |
 | `/decisions` | 从 git 历史提取架构决策记录 | `/decisions` |
-| `/archaeology` | 深度交互式调查 | `/archaeology src/` |
+| `/unearth` | 深度交互式调查 | `/unearth src/` |
 
 #### 输出示例
 
