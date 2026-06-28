@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/git-archaeologist/',
+  base: '/git-unearth/',
   head: [
     ['meta', { name: 'theme-color', content: '#6366f1' }],
   ],
@@ -14,7 +14,7 @@ export default defineConfig({
         darkModeSwitchLabel: 'Theme',
         docFooter: { next: 'Next', prev: 'Previous' },
         editLink: {
-          pattern: 'https://github.com/saqqdy/git-archaeologist/edit/master/docs/:path',
+          pattern: 'https://github.com/saqqdy/git-unearth/edit/master/docs/:path',
           text: 'Edit this page on GitHub',
         },
         footer: { copyright: 'Copyright © 2024-present saqqdy', message: 'MIT License' },
@@ -23,8 +23,8 @@ export default defineConfig({
           { activeMatch: '/guide/', link: '/guide/', text: 'Guide' },
           { activeMatch: '/api/', link: '/api/', text: 'API' },
           { items: [
-            { link: 'https://github.com/saqqdy/git-archaeologist', text: 'GitHub' },
-            { link: 'https://www.npmjs.com/package/git-archaeologist', text: 'NPM' },
+            { link: 'https://github.com/saqqdy/git-unearth', text: 'GitHub' },
+            { link: 'https://www.npmjs.com/package/git-unearth', text: 'NPM' },
           ], text: 'Links' },
         ],
         outline: { label: 'On this page' },
@@ -60,7 +60,7 @@ export default defineConfig({
           ],
         },
       },
-      title: 'Git Archaeologist',
+      title: 'Git Unearth',
     },
     zh: {
       description: 'AI 驱动的 git blame 增强版 — 理解代码为什么写成这样',
@@ -71,7 +71,7 @@ export default defineConfig({
         darkModeSwitchLabel: '主题',
         docFooter: { next: '下一页', prev: '上一页' },
         editLink: {
-          pattern: 'https://github.com/saqqdy/git-archaeologist/edit/master/docs/:path',
+          pattern: 'https://github.com/saqqdy/git-unearth/edit/master/docs/:path',
           text: '在 GitHub 上编辑此页',
         },
         footer: { copyright: '版权所有 © 2024-present saqqdy', message: '基于 MIT 许可发布' },
@@ -80,8 +80,8 @@ export default defineConfig({
           { activeMatch: '/zh/guide/', link: '/zh/guide/', text: '指南' },
           { activeMatch: '/zh/api/', link: '/zh/api/', text: 'API' },
           { items: [
-            { link: 'https://github.com/saqqdy/git-archaeologist', text: 'GitHub' },
-            { link: 'https://www.npmjs.com/package/git-archaeologist', text: 'NPM' },
+            { link: 'https://github.com/saqqdy/git-unearth', text: 'GitHub' },
+            { link: 'https://www.npmjs.com/package/git-unearth', text: 'NPM' },
           ], text: '链接' },
         ],
         outline: { label: '页面导航' },
@@ -117,14 +117,14 @@ export default defineConfig({
           ],
         },
       },
-      title: 'Git Archaeologist',
+      title: 'Git Unearth',
     },
   },
-  sitemap: { hostname: 'https://saqqdy.github.io/git-archaeologist' },
+  sitemap: { hostname: 'https://saqqdy.github.io/git-unearth' },
   themeConfig: {
     logo: '/logo.svg',
     search: { provider: 'local' },
-    siteTitle: 'Git Archaeologist',
-    socialLinks: [{ icon: 'github', link: 'https://github.com/saqqdy/git-archaeologist' }],
+    siteTitle: 'Git Unearth',
+    socialLinks: [{ icon: 'github', link: 'https://github.com/saqqdy/git-unearth' }],
   },
 })

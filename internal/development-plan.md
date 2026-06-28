@@ -143,12 +143,12 @@
     ⚠️ 争议: Review 中有人认为前端权限不可靠
 ```
 
-### `/archaeology <area>` — 深度考古模式
+### `/unearth <area>` — 深度考古模式
 
 交互式深度调查，支持追问：
 
 ```
-> /archaeology src/payment/
+> /unearth src/payment/
 
 ⛏️ 深度考古: src/payment/
 
@@ -465,17 +465,17 @@ commit hash → GitLab API → MR → {
 
 #### 5.1 交互式追问
 
-在 `/archaeology` 模式下，支持自然语言追问：
+在 `/unearth` 模式下，支持自然语言追问：
 
 ```
 用户: 为什么这里有 sleep(500)?
-Archaeologist: [解释原因...]
+Unearth: [解释原因...]
 
 用户: 那下游系统什么时候写入完成的？
-Archaeologist: [基于 commit 历史继续追踪...]
+Unearth: [基于 commit 历史继续追踪...]
 
 用户: 有没有计划去掉这个 workaround？
-Archaeologist: [搜索相关 TODO/Issue...]
+Unearth: [搜索相关 TODO/Issue...]
 ```
 
 #### 5.2 性能优化
@@ -489,7 +489,7 @@ Archaeologist: [搜索相关 TODO/Issue...]
 
 ```json
 {
-  "gitArchaeologist": {
+  "git-unearth": {
     "maxHistoryMonths": 12,
     "cacheDir": ".git-unearth",
     "cacheTTL": 86400,
@@ -527,7 +527,7 @@ git-unearth/
 │   │   ├── history.ts           # /history 命令
 │   │   ├── context.ts           # /context 命令
 │   │   ├── decisions.ts         # /decisions 命令
-│   │   └── archaeology.ts       # /archaeology 命令
+│   │   └── unearth.ts       # /unearth 命令
 │   ├── collectors/              # 数据采集层
 │   │   ├── git-blame.ts         # blame 解析
 │   │   ├── git-log.ts           # log 解析

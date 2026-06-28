@@ -6,7 +6,7 @@
 | `/history <path>` | 演变时间线，标注关键决策点 |
 | `/context <hash>` | 相关变更网络 |
 | `/decisions [area]` | 从 git 历史提取架构决策记录 |
-| `/archaeology <area>` | 深度交互式调查 |
+| `/unearth <area>` | 深度交互式调查 |
 
 ## `/why` 示例
 
